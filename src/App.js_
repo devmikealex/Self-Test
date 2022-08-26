@@ -6,6 +6,7 @@ const COLLECTION_URL = "/data/collection.json";
 
 let fullCollection = [];
 let reservedCollection = [];
+let isEndOfCollection = false;
 
 function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
@@ -29,10 +30,8 @@ function App() {
     }, []);
 
     function button() {
-        // console.log("BUTTON");
-        const newCollection = openCard()
-        if (newCollection) setOpenedCollection(newCollection)
-        // console.log("newCollection", newCollection);
+        console.log("BUTTON");
+        setOpenedCollection(openCard());
         return
         // if (reservedCollection.length) {
         //     const cardForOpen = reservedCollection.splice(Math.floor(Math.random() * reservedCollection.length), 1);
@@ -46,9 +45,10 @@ function App() {
     }
 
     function openCard(cardAlias) {
-        // console.log("FUN openCard", cardAlias);
-        // console.log("reservedCollection", reservedCollection);
-        // console.log("openedCollection", openedCollection);
+        console.log("FUN openCard", cardAlias);
+        console.log("isEndOfCollection", isEndOfCollection);
+        console.log("reservedCollection", reservedCollection);
+        console.log("openedCollection", openedCollection);
         if (reservedCollection.length) {
             let cardForOpen = [cardAlias];
             let a;
@@ -63,22 +63,18 @@ function App() {
             }
             return [cardForOpen[0], ...openedCollection]
         } else {
-            if (openedCollection[0]!=='final') {
+            if (!isEndOfCollection) {
+                isEndOfCollection = true
                 return ['final', ...openedCollection]
+            } else {
+                return openedCollection
             }
-            return null
         }
-    }
-    // for test
-    // const openedCollection2 = [ "HTML", "JSON" ]
-    function button2() {
-        setOpenedCollection([0])
     }
 
     return (
         <div className="App">
             <h1 className="test">START!</h1>
-            {/* <button onClick={button2}>button2</button> */}
             <button onClick={button}>{btnName}</button>
             {openedCollection.map((alias) => (
                 <Card titleCode={alias} key={alias} />

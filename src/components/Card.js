@@ -1,37 +1,49 @@
 import { useState, useEffect } from "react";
 import Preview from "./Preview";
 
-let obj = {
-    links: [],
-};
+// let obj = {
+//     links: [],
+// };
 
 function Card(props) {
     const [dataHTML, setDataHTML] = useState({ __html: "Loading..." });
+    const [dataOBJ, setDataOBJ] = useState({ links: [] });
+
+    // console.warn("Card", props.titleCode)
 
     useEffect(() => {
+        // console.warn("useEffect", props.titleCode)
         // ! ddddddddd
         fetch("/data/" + props.titleCode + ".html")
         // fetch("/data/pseudoClass.html")
             .then((response) => response.text())
             .then((text) => {
                 // setDataHTML({__html: dataStructuring(text)});
-                obj = dataStructuring(text);
-                setDataHTML({ __html: obj.description });
+                const obj = dataStructuring(text);
+                // setDataHTML({ __html: obj.description });
+                setDataOBJ(obj)
+                // console.info ("text = ", text);
             })
             .catch((err) => {
                 setDataHTML({ __html: err });
             });
-    }, [props.titleCode]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // console.log("dataOBJ.title = ", dataOBJ.title);
+    // console.log("dataOBJ.abbr = ", dataOBJ.abbr);
+    // console.log("dataOBJ.description = ", dataOBJ.description);
+    // console.log("dataOBJ.links = ", dataOBJ.links);
 
     return (
         <div className="Card">
             {/* <h2>{props.titleCode}</h2> */}
-            <h3>{obj.title}</h3>
+            <h3>{dataOBJ.title}</h3>
             
-            { obj.abbr ? <h4>{obj.abbr}</h4> : null }
-            <div dangerouslySetInnerHTML={dataHTML} />
+            { dataOBJ.abbr ? <h4>{dataOBJ.abbr}</h4> : null }
+            <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
             <ul>
-                {obj.links.map((item) => {
+                {dataOBJ.links.map((item) => {
                     const [urlTitle, url, key] = item;
                     return (
                         <li key={key}>
@@ -41,6 +53,7 @@ function Card(props) {
                     );
                 })}
             </ul>
+            <hr />
         </div>
     );
 }
