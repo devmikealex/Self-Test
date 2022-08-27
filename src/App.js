@@ -10,22 +10,32 @@ let reservedCollection = [];
 function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
     const [btnName, setBtnName] = useState("Get Random Card");
-
+    const [positiveResponse, setPositiveResponse] = useState(0);
+    const [negativeResponse, setNegativeResponse] = useState(0);
+    
     useEffect(() => {
-        const queryString = window.location.search.substring(7);
-        console.log("queryString = ", queryString);
+        // const queryString = window.location.search.substring(7);
+        const searchParams = new URLSearchParams(window.location.search.substring(1));
+        const queryString = searchParams.get("alias")
+        console.log("alias queryString = ", queryString);
         fetch(COLLECTION_URL)
             .then((response) => response.json())
             .then((jsonList) => {
                 fullCollection = jsonList;
                 reservedCollection = fullCollection.map((x) => x.alias);
-                let cardForOpen = [queryString]
-                if (!queryString) {
-                    cardForOpen = reservedCollection.splice(Math.floor(Math.random() * reservedCollection.length), 1);
-                }
-                setOpenedCollection((oldArray) => [cardForOpen[0], ...oldArray]);
+
+                const newCollection = openCard(queryString)
+                if (newCollection) setOpenedCollection(newCollection)
+                console.log("newCollection", newCollection);
+
+                // let cardForOpen = [queryString]
+                // if (!queryString) {
+                //     cardForOpen = reservedCollection.splice(Math.floor(Math.random() * reservedCollection.length), 1);
+                // }
+                // setOpenedCollection((oldArray) => [cardForOpen[0], ...oldArray]);
             })
             .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     function button() {
@@ -46,18 +56,22 @@ function App() {
     }
 
     function openCard(cardAlias) {
-        // console.log("FUN openCard", cardAlias);
+        console.log("FUN openCard", cardAlias);
         // console.log("reservedCollection", reservedCollection);
         // console.log("openedCollection", openedCollection);
         if (reservedCollection.length) {
             let cardForOpen = [cardAlias];
-            let a;
+            let indexCardForOpen;
             if (cardAlias===undefined) {
-                a = Math.floor(Math.random() * reservedCollection.length)
+                indexCardForOpen = Math.floor(Math.random() * reservedCollection.length)
             } else {
-                a = reservedCollection.indexOf(cardAlias)
+                if (reservedCollection.includes(cardAlias)) {
+                    indexCardForOpen = reservedCollection.indexOf(cardAlias)
+                } else {
+                    return ['error', ...openedCollection]
+                }
             }
-            cardForOpen = reservedCollection.splice(a, 1);
+            cardForOpen = reservedCollection.splice(indexCardForOpen, 1);
             if (!reservedCollection.length) {
                 setBtnName("FIANL")
             }
@@ -69,19 +83,25 @@ function App() {
             return null
         }
     }
-    // for test
-    // const openedCollection2 = [ "HTML", "JSON" ]
-    function button2() {
-        setOpenedCollection([0])
+
+    function funcPosNeg(answer, alias) {
+        console.log("funcPosNeg");
+        console.log(answer, alias);
+        console.log(positiveResponse, negativeResponse);
+        if (answer === 1) {
+            setPositiveResponse(old => old + 1)
+        } else {
+            setNegativeResponse(old => old + 1)
+        }
     }
 
     return (
         <div className="App">
-            <h1 className="test">START!</h1>
+            <div>{positiveResponse} - {negativeResponse}</div>
             {/* <button onClick={button2}>button2</button> */}
             <button onClick={button}>{btnName}</button>
             {openedCollection.map((alias) => (
-                <Card titleCode={alias} key={alias} />
+                <Card titleCode={alias} key={alias} funcPosNeg={funcPosNeg} />
             ))}
         </div>
     );

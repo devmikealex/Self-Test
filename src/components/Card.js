@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import Preview from "./Preview";
+import BtnsPosNeg from "./BtnsPosNeg";
 
 // let obj = {
 //     links: [],
 // };
 
 function Card(props) {
-    const [dataHTML, setDataHTML] = useState({ __html: "Loading..." });
-    const [dataOBJ, setDataOBJ] = useState({ links: [] });
+    // const [dataHTML, setDataHTML] = useState({ __html: "Loading..." });
+    const [dataOBJ, setDataOBJ] = useState({ links: []});
+    const [passed, setPassed] = useState(0)
 
     // console.warn("Card", props.titleCode)
 
@@ -18,6 +20,7 @@ function Card(props) {
         // fetch("/data/pseudoClass.html")
             .then((response) => response.text())
             .then((text) => {
+                console.log('Card Fetch', props.titleCode);
                 // setDataHTML({__html: dataStructuring(text)});
                 const obj = dataStructuring(text);
                 // setDataHTML({ __html: obj.description });
@@ -25,7 +28,8 @@ function Card(props) {
                 // console.info ("text = ", text);
             })
             .catch((err) => {
-                setDataHTML({ __html: err });
+                console.error("Fetch error "+props.titleCode);
+                setDataOBJ({ description: err });
             });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -38,6 +42,7 @@ function Card(props) {
     return (
         <div className="Card">
             {/* <h2>{props.titleCode}</h2> */}
+                <BtnsPosNeg passed={passed} func={a}/>
             <h3>{dataOBJ.title}</h3>
             
             { dataOBJ.abbr ? <h4>{dataOBJ.abbr}</h4> : null }
@@ -56,9 +61,22 @@ function Card(props) {
             <hr />
         </div>
     );
+
+    function a(answer) {
+
+
+        // setDataOBJ((old) => {
+        //     return { ...old, passed: answer };
+        // });
+        setPassed(answer)
+        props.funcPosNeg(answer, props.titleCode);
+    }
+
+
 }
 
 export default Card;
+
 
 function dataStructuring(text) {
     const allLines = text.split(/\r?\n/);
@@ -97,6 +115,7 @@ function dataStructuring(text) {
         abbr,
         description,
         links,
+        passed: 0
     };
 
     return data;
