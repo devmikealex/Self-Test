@@ -63,20 +63,15 @@ function Card(props) {
     );
 
     function a(answer) {
-
-
         // setDataOBJ((old) => {
         //     return { ...old, passed: answer };
         // });
         setPassed(answer)
-        props.funcPosNeg(answer, props.titleCode);
+        props.funcPosNeg(answer, props.titleCode, dataOBJ.title);
     }
-
-
 }
 
 export default Card;
-
 
 function dataStructuring(text) {
     const allLines = text.split(/\r?\n/);

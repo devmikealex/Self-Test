@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./components/Card";
+import NegativeCollectionList from "./components/NegativeCollectionList";
 
 const COLLECTION_URL = "/data/collection.json";
 
 let fullCollection = [];
 let reservedCollection = [];
+// let negativeCollection = [];
 
 function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
+    const [negativeCollection, setNegativeCollection] = useState([]);
     const [btnName, setBtnName] = useState("Get Random Card");
     const [positiveResponse, setPositiveResponse] = useState(0);
     const [negativeResponse, setNegativeResponse] = useState(0);
@@ -57,18 +60,19 @@ function App() {
 
     function openCard(cardAlias) {
         console.log("FUN openCard", cardAlias);
-        // console.log("reservedCollection", reservedCollection);
-        // console.log("openedCollection", openedCollection);
+        console.log("reservedCollection", reservedCollection);
+        console.log("openedCollection", openedCollection);
         if (reservedCollection.length) {
             let cardForOpen = [cardAlias];
             let indexCardForOpen;
-            if (cardAlias===undefined) {
+            if (!cardAlias) {
                 indexCardForOpen = Math.floor(Math.random() * reservedCollection.length)
             } else {
                 if (reservedCollection.includes(cardAlias)) {
                     indexCardForOpen = reservedCollection.indexOf(cardAlias)
                 } else {
-                    return ['error', ...openedCollection]
+                    console.warn(`Alias ${cardAlias} not found in collection`);
+                    return ['notfound', ...openedCollection]
                 }
             }
             cardForOpen = reservedCollection.splice(indexCardForOpen, 1);
@@ -84,21 +88,38 @@ function App() {
         }
     }
 
-    function funcPosNeg(answer, alias) {
+    function funcPosNeg(answer, alias, title) {
         console.log("funcPosNeg");
-        console.log(answer, alias);
+        console.log(answer, alias, title);
         console.log(positiveResponse, negativeResponse);
         if (answer === 1) {
             setPositiveResponse(old => old + 1)
         } else {
             setNegativeResponse(old => old + 1)
+            setNegativeCollection((old)=>{
+                console.log('OLD', old);
+                return [...old, [alias, title]]
+            })
         }
+    }
+
+    function funcBtnShowOnTOP(alias) {
+        console.log('funcBtnShowOnTOP');
+        console.log('alias', alias);
+        // найти алиас в массивл openedCollection
+        const indexForOpen = openedCollection.indexOf(alias)
+        console.log('indexForOpen', indexForOpen);
+        // вырезать его
+        const cardForOpen = openedCollection.splice(indexForOpen, 1)
+        console.log('cardForOpen', cardForOpen);
+        // шифт в начало массива
+        setOpenedCollection([cardForOpen[0], ...openedCollection]);
     }
 
     return (
         <div className="App">
             <div>{positiveResponse} - {negativeResponse}</div>
-            {/* <button onClick={button2}>button2</button> */}
+            <NegativeCollectionList array={negativeCollection} funcBtn={funcBtnShowOnTOP} />
             <button onClick={button}>{btnName}</button>
             {openedCollection.map((alias) => (
                 <Card titleCode={alias} key={alias} funcPosNeg={funcPosNeg} />
