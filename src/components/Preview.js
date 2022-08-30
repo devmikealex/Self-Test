@@ -8,6 +8,3 @@ export default function Preview(props) {
     }
     return null
 }
-
-// How do I get a YouTube video thumbnail from the YouTube API? - Stack Overflow
-// https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api
