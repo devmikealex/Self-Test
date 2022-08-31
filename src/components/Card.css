@@ -1,0 +1,17 @@
+.card {
+    border: 1px rgb(75, 163, 221) solid;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    background-color: white;
+}
+.card.pos{
+    border: 2px solid #106b02;
+    background-color: #dbf8df;
+}
+.card.neg{
+    border: 2px solid #8f0909;
+    background-color: #ffe6e6;
+}

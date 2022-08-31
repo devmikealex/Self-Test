@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import Preview from "./Preview";
 import BtnsPosNeg from "./BtnsPosNeg";
+import "./Card.css";
 
-function Card(props) {
+export default function Card(props) {
     const [dataOBJ, setDataOBJ] = useState({ links: []});
-    const [passed, setPassed] = useState(0)
+    const [passed, setPassed] = useState('none')
 
     useEffect(() => {
         fetch("/data/" + props.titleCode + ".html")
@@ -22,34 +23,40 @@ function Card(props) {
     }, []);
 
     return (
-        <div className="Card">
+        <div className={"card "+passed}>
+            <h2>{dataOBJ.title}</h2>
+            { dataOBJ.abbr ? <h3>{dataOBJ.abbr}</h3> : null }
             <BtnsPosNeg passed={passed} func={btnAnswer}/>
-            <h3>{dataOBJ.title}</h3>
-            { dataOBJ.abbr ? <h4>{dataOBJ.abbr}</h4> : null }
-            <hr />
             <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
-            <ul>
-                {dataOBJ.links.map((item) => {
-                    const [urlTitle, url, key] = item;
-                    return (
-                        <li key={key}>
-                            <a href={url} target='_blank' rel='noreferrer'>{urlTitle}
-                            <Preview url={url} /></a>
-                        </li>
-                    );
-                })}
-            </ul>
-            <hr />
+            <LinksList />
         </div>
     );
+
+    function LinksList () {
+        if (dataOBJ.links.length) {
+            return (
+                <><hr />
+                <ul>
+                    {dataOBJ.links.map((item) => {
+                        const [urlTitle, url, key] = item;
+                        return (
+                            <li key={key}>
+                                <a href={url} target='_blank' rel='noreferrer'>{urlTitle}
+                                <Preview url={url} /></a>
+                            </li>
+                        );
+                    })}
+                </ul></>
+            )
+        }
+        return null
+    }
 
     function btnAnswer(answer) {
         setPassed(answer)
         props.funcPosNeg(answer, props.titleCode, dataOBJ.title);
     }
 }
-
-export default Card;
 
 function dataStructuring(text) {
     const allLines = text.split(/\r?\n/);
@@ -86,7 +93,7 @@ function dataStructuring(text) {
         abbr,
         description,
         links,
-        passed: 0
+        passed: 'none'
     };
 
     return data;

@@ -8,7 +8,7 @@ export default function NegativeCollectionList (props) {
         <div>
             {props.array.map((item)=>{
                 const [alias, title] = item
-                return <button className="pppp" onClick={() => props.funcBtn(alias)} key={alias}>{title}</button>
+                return <button className="negative-btn" onClick={() => props.funcBtn(alias)} key={alias}>{title}</button>
             })}
         </div>
     )

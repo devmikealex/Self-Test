@@ -1,3 +1,37 @@
-.test {
-  color:brown;
+.container-header {
+  width: 100%;
+  position: sticky;
+  z-index: 10;
+  top: 0px;
+
+  background-color: #2BACD7;
+  background: linear-gradient(0deg, #18b3e7, #067fc1);
+  text-align: center;
+  padding: 14px;
+}
+
+.random-btn {
+  border: 1px solid #064664;
+  background-color: #e4f6ff;
+  color: #006897;
+  text-shadow: 0 2px 3px rgba(255, 255, 255, 0.8);
+}
+.random-btn:hover {
+  background: white;
+  padding: 10px 40px;
+  /* border-color: #004c6f; */
+}
+
+.response-counter {
+  color: #eefaff;
+  font-size: 1.4em;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.container-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -1,4 +1,18 @@
-.pppp{
-    color:rgb(173, 0, 0);
-    margin: 0px 10px;
+.negative-btn{
+    color:white;
+    background-color: rgb(247, 25, 25);
+    border-radius: 30px;
+    margin: 3px;
+    padding: 4px 16px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+    transition: all .4s;
+    font-family: Verdana, sans-serif;
+}
+.negative-btn:hover {
+    /* box-shadow: 1px 1px 1px #EAEAEA; */
+    background-color: rgb(219, 0, 0);
+    /* transform: scale(1.1); */
 }

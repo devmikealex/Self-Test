@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import Card from "./components/Card";
 import NegativeCollectionList from "./components/NegativeCollectionList";
+import "./App.css";
 
 const COLLECTION_URL = "/data/collection.json";
 
 let fullCollection = [];
 let reservedCollection = [];
 
-function App() {
+export default function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
     const [negativeCollection, setNegativeCollection] = useState([]);
     const [btnName, setBtnName] = useState("Get Random Card");
@@ -19,6 +19,9 @@ function App() {
         const searchParams = new URLSearchParams(window.location.search.substring(1));
         const queryString = searchParams.get("alias")
         console.log("alias queryString = ", queryString);
+
+        // TODO загрузить из Local Storage
+
         fetch(COLLECTION_URL)
             .then((response) => response.json())
             .then((jsonList) => {
@@ -66,10 +69,13 @@ function App() {
     }
 
     function funcPosNeg(answer, alias, title) {
-        if (answer === 1) {
+        if (answer === 'pos') {
             setPositiveResponse(old => old + 1)
-        } else {
+        } else { // 'neg'
             setNegativeResponse(old => old + 1)
+
+            // TODO сохранить в Local Storage
+            
             setNegativeCollection((old)=>{
                 return [...old, [alias, title]]
             })
@@ -84,14 +90,27 @@ function App() {
 
     return (
         <div className="App">
-            <div>{positiveResponse} - {negativeResponse}</div>
-            <NegativeCollectionList array={negativeCollection} funcBtn={funcBtnShowOnTOP} />
-            <button onClick={button}>{btnName}</button>
-            {openedCollection.map((alias) => (
-                <Card titleCode={alias} key={alias} funcPosNeg={funcPosNeg} />
-            ))}
+            <div className="container-header">
+                <ShowResponseCounter />
+                <NegativeCollectionList array={negativeCollection} funcBtn={funcBtnShowOnTOP} />
+                <button className="btns random-btn" onClick={button}>{btnName}</button>
+            </div>
+            <div className="container-card">
+                {openedCollection.map((alias) => (
+                    <Card titleCode={alias} key={alias} funcPosNeg={funcPosNeg} />
+                ))}
+            </div>
         </div>
     );
+    
+    function ShowResponseCounter() {
+        if (negativeResponse+positiveResponse) {
+            return (
+            <div className="response-counter">Помню: {positiveResponse} - 
+            Не помню: {negativeResponse}</div>
+            )
+        }
+        return null
+    }
 }
 
-export default App;

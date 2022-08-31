@@ -1,0 +1,36 @@
+.pos-neg-btn {
+    /* border: 1px solid #064664;
+    background-color: #e4f6ff;
+    color: #006897; */
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.8);
+    margin: 10px;
+    transition: 0.25s ease;
+    width: 200px;
+    margin-top: 0;
+}
+.pos-btn {
+    border: 2px solid #106b02;
+    background-color: #dbf8df;
+    color: #106b02;
+}
+.neg-btn{
+    border: 2px solid #8f0909;
+    background-color: #ffe6e6;
+    color: #8f0909;
+}
+.pos-neg-btn:hover {
+    background: white;
+    width: 240px;
+    /* transform: scale(1.1); */
+}
+.center-cont {
+    /* text-align: center; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+/* .for-center-btn { */
+.center-cont div {
+    width: 260px;
+    text-align: center;
+}
