@@ -13,7 +13,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   padding: 10px 20px;
-  margin-top: 6px;
+  margin: 4px;
   transition: all .3s;
   font-size: 1.2em;	
 }
@@ -36,6 +36,8 @@ a {
 ul {
   padding: 6px;
   margin: 6px 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 li {

@@ -26,9 +26,11 @@ export default function Card(props) {
         <div className={"card "+passed}>
             <h2>{dataOBJ.title}</h2>
             { dataOBJ.abbr ? <h3>{dataOBJ.abbr}</h3> : null }
+            <div className={"secret " + passed}>
+                <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
+                <LinksList />
+            </div>
             <BtnsPosNeg passed={passed} func={btnAnswer}/>
-            <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
-            <LinksList />
         </div>
     );
 

@@ -1,11 +1,12 @@
 .card {
-    border: 1px rgb(75, 163, 221) solid;
+    border: 2px rgb(75, 163, 221) solid;
     border-radius: 8px;
-    margin: 20px;
+    margin: 14px;
     padding: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     width: 800px;
     background-color: white;
+    transition: all .5s ease;
 }
 .card.pos{
     border: 2px solid #106b02;
@@ -14,4 +15,14 @@
 .card.neg{
     border: 2px solid #8f0909;
     background-color: #ffe6e6;
+}
+
+.secret {
+    transition: all 0.5s;
+    opacity: 1;
+    overflow: hidden;
+}
+.secret.none{
+    opacity: 0.05;
+    max-height: 3em;
 }

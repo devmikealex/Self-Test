@@ -7,10 +7,12 @@ export default function BtnsPosNeg(props) {
             b = <DrawButtons />;
             break;
         case 'pos':
-            b = "ДА";
+            // b = "ДА";
+            b = null;
             break;
         case 'neg':
-            b = "НЕТ";
+            // b = "НЕТ";
+            b = null;
             break;
         default:
     }
@@ -19,8 +21,8 @@ export default function BtnsPosNeg(props) {
     function DrawButtons() {
         return (
             <div className="center-cont">
-                <div className="for-center-btn"><button className="btns pos-neg-btn pos-btn" onClick={() => a('pos')}>Помню</button></div>
-                <div className="for-center-btn"><button className="btns pos-neg-btn neg-btn" onClick={() => a('neg')}>Не помню</button></div>
+                <div className="for-center-btn"><button className="btns pos-neg-btn pos-btn" onClick={() => a('pos')}>&#10004; Помню</button></div>
+                <div className="for-center-btn"><button className="btns pos-neg-btn neg-btn" onClick={() => a('neg')}>&#10006; Не помню</button></div>
             </div>
         );
     }

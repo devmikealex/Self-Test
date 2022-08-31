@@ -1,13 +1,17 @@
 .container-header {
   width: 100%;
-  position: sticky;
   z-index: 10;
-  top: 0px;
+  /* position: sticky; */
+  /* top: 0px; */
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
 
   background-color: #2BACD7;
   background: linear-gradient(0deg, #18b3e7, #067fc1);
   text-align: center;
-  padding: 14px;
+  padding: 4px;
 }
 
 .random-btn {
@@ -24,9 +28,10 @@
 
 .response-counter {
   color: #eefaff;
-  font-size: 1.4em;
-  margin-bottom: 6px;
+  font-size: 1.2em;
+  /* margin-bottom: 6px; */
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
 }
 
 .container-card {
@@ -34,4 +39,5 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 8em;
 }

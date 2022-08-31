@@ -4,6 +4,7 @@ import NegativeCollectionList from "./components/NegativeCollectionList";
 import "./App.css";
 
 const COLLECTION_URL = "/data/collection.json";
+const RANDOM_BUTTON_DEFAULT = "Get Random Card";
 
 let fullCollection = [];
 let reservedCollection = [];
@@ -11,7 +12,7 @@ let reservedCollection = [];
 export default function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
     const [negativeCollection, setNegativeCollection] = useState([]);
-    const [btnName, setBtnName] = useState("Get Random Card");
+    const [btnName, setBtnName] = useState(RANDOM_BUTTON_DEFAULT);
     const [positiveResponse, setPositiveResponse] = useState(0);
     const [negativeResponse, setNegativeResponse] = useState(0);
     
@@ -20,7 +21,7 @@ export default function App() {
         const queryString = searchParams.get("alias")
         console.log("alias queryString = ", queryString);
 
-        // TODO загрузить из Local Storage
+        // TODO загрузить negativeCollection из Local Storage
 
         fetch(COLLECTION_URL)
             .then((response) => response.json())
@@ -38,7 +39,6 @@ export default function App() {
     function button() {
         const newCollection = openCard()
         if (newCollection) setOpenedCollection(newCollection)
-        return
     }
 
     function openCard(cardAlias) {
@@ -57,7 +57,7 @@ export default function App() {
             }
             cardForOpen = reservedCollection.splice(indexCardForOpen, 1);
             if (!reservedCollection.length) {
-                setBtnName("FIANL")
+                setBtnName("Final")
             }
             return [cardForOpen[0], ...openedCollection]
         } else {
@@ -91,9 +91,9 @@ export default function App() {
     return (
         <div className="App">
             <div className="container-header">
-                <ShowResponseCounter />
+                <button className="btns random-btn" onClick={button}>&#9851; {btnName}</button>
                 <NegativeCollectionList array={negativeCollection} funcBtn={funcBtnShowOnTOP} />
-                <button className="btns random-btn" onClick={button}>{btnName}</button>
+                <ShowResponseCounter />
             </div>
             <div className="container-card">
                 {openedCollection.map((alias) => (
