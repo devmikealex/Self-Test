@@ -16,6 +16,10 @@
     border: 2px solid #8f0909;
     background-color: #ffe6e6;
 }
+.card.neutral{
+    border: 2px solid #446d9b;
+    background-color: #e1edfbda;
+}
 
 .secret {
     transition: all 0.5s;

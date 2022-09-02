@@ -171,7 +171,7 @@ export default function App() {
             </div>
             <div className="container-card">
                 {openedCollection.map((alias) => (
-                    <Card titleCode={alias} key={alias} funcPosNeg={funcPosNeg} />
+                    <Card titleCode={alias} key={alias} funcPosNeg={funcPosNeg} queryString={queryString} />
                 ))}
             </div>
         </div>

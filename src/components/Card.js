@@ -21,16 +21,20 @@ export default function Card(props) {
             });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    let passed2 = passed
+    if (props.queryString === props.titleCode) {
+        passed2 = 'neutral'
+    }
 
     return (
-        <div className={"card "+passed}>
+        <div className={"card " + passed2}>
             <h2>{dataOBJ.title}</h2>
             { dataOBJ.abbr ? <h3>{dataOBJ.abbr}</h3> : null }
-            <div className={"secret " + passed}>
+            <div className={"secret " + passed2}>
                 <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
                 <LinksList />
             </div>
-            {['final', 'notfound', 'error'].includes(props.titleCode)
+            {[props.queryString, 'final', 'notfound', 'error'].includes(props.titleCode)
                 ? null
                 : <BtnsPosNeg passed={passed} func={btnAnswer}/>}
         </div>
@@ -64,8 +68,34 @@ export default function Card(props) {
 
 function dataStructuring(text) {
     const allLines = text.split(/\r?\n/);
-    const trimLines = allLines.map((line) => line.trim());
-    const lines = trimLines.filter((line) => line !== "");
+
+    let lines=[]
+    let isNotFormated = true
+    for(let line of allLines) {
+        if (line.includes('<pre>')) isNotFormated = false
+        if (line.includes('</pre>')) isNotFormated = true
+        if (isNotFormated) {
+            line = line.trim()
+            if (line) lines.push(line)
+        } else
+            lines.push(line)
+    }
+
+    // const trimLines = allLines.map(line => {
+    //     if (line.includes('<pre>')) isFormated = true
+    //     if (line.includes('</pre>')) isFormated = false
+    //     if (!isFormated) line = line.trim()
+    //     return line
+    // });
+
+    // isFormated = false
+    // const lines = trimLines.filter(line => {
+    //     if (line.includes('<pre>')) isFormated = true
+    //     if (line.includes('</pre>')) isFormated = false    
+    //     if (!isFormated) return (line !== "")
+    //     return true
+    // })
+
     const BASE_LINE = 0
     const title = lines[BASE_LINE];
     let abbr = null;
@@ -99,8 +129,5 @@ function dataStructuring(text) {
         links,
         passed: 'none'
     };
-
-    console.log('description', description);
-
     return data;
 }
