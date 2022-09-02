@@ -8,10 +8,11 @@ const RANDOM_BUTTON_DEFAULT = "Get Random Card";
 
 let fullCollection = [];
 let reservedCollection = [];
+let queryString;
 
 export default function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
-    const [negativeCollection, setNegativeCollection] = useState(['aaa', 'sss']);
+    const [negativeCollection, setNegativeCollection] = useState([]);
     const [btnName, setBtnName] = useState(RANDOM_BUTTON_DEFAULT);
     const [positiveResponse, setPositiveResponse] = useState(0);
     const [negativeResponse, setNegativeResponse] = useState(0);
@@ -25,7 +26,7 @@ export default function App() {
 
     const handleKeyPress = useCallback((event) => {
         console.log(`Key pressed: ${event.key}`);
-        console.log("---", negativeCollection);
+        console.log("---", openedCollection);
         if (event.key === ' ') {
             event.preventDefault();
             if(!event.repeat) {
@@ -33,7 +34,7 @@ export default function App() {
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [openedCollection]);
     useEffect(() => {
         document.addEventListener("keydown", handleKeyPress);
         return () => {
@@ -43,7 +44,7 @@ export default function App() {
 
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search.substring(1));
-        const queryString = searchParams.get("alias");
+        queryString = searchParams.get("alias");
         console.log("alias queryString = ", queryString);
 
         // загрузить negativeCollection из Local Storage
@@ -104,8 +105,13 @@ export default function App() {
         } else {
             // === 'neg'
             setNegativeResponse((old) => old + 1);
+
             // сохранить в Local Storage
-            if (!negativeCollection.includes([alias, title])) {
+            const newA = negativeCollection.filter ( (item) => {
+                // подготовка к проверки на наличие элемента alias (newA.length > 0)
+                return item[0] === alias;
+            })
+            if (!newA.length) {
                 setNegativeCollection((old) => {
                     const newNC = [...old, [alias, title]]
                     saveNegColToLocStor(newNC)
@@ -115,10 +121,31 @@ export default function App() {
         }
     }
 
-    function funcBtnShowOnTOP(alias) {
+    function funcBtnShowOnTOP(alias, mode) {
+        console.log('mode',mode)
+        if (mode === 'DEL') {
+            // удалить alias из negativeCollection
+            let indexForDelete = 0;
+            for (const item of negativeCollection) {
+                if (item[0] === alias) break
+                indexForDelete++;
+            }
+            negativeCollection.splice(indexForDelete, 1);
+            console.log(`funcBtnShowOnTOP - indexForDelete: ${indexForDelete} alias: ${alias}`);
+            setNegativeCollection([...negativeCollection])
+            saveNegColToLocStor(negativeCollection)
+            return
+        }
         const indexForOpen = openedCollection.indexOf(alias);
-        const cardForOpen = openedCollection.splice(indexForOpen, 1);
-        setOpenedCollection([cardForOpen[0], ...openedCollection]);
+        let onTopElement;
+        console.log(`funcBtnShowOnTOP - indexForOpen: ${indexForOpen} alias: ${alias}`);
+        if (indexForOpen === -1) {
+            onTopElement = alias
+        } else {
+            const cardForOpen = openedCollection.splice(indexForOpen, 1);
+            onTopElement = cardForOpen[0]
+        }
+        setOpenedCollection([onTopElement, ...openedCollection]);
     }
 
     function saveNegColToLocStor(array) {

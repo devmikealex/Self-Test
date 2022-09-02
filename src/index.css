@@ -7,7 +7,10 @@
 
 body {
   background-color: #F5F5F5;
+  overflow: scroll;
 }
+
+
 
 .btns {
   border-radius: 8px;
@@ -33,6 +36,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 6px 0 6px;
+  line-height: 1.3em;
+}
+
 ul {
   padding: 6px;
   margin: 6px 20px;
@@ -42,4 +50,30 @@ ul {
 
 li {
   margin: 6px;
+}
+
+code, pre {
+  font-family: Consolas, monospace;
+  color: #0a129a;
+  font-size: 1.1em;
+  border-radius: 6px;
+  background-color: white;
+}
+pre {
+  display: block;
+  padding: 12px;
+  margin: 6px 0;
+  /* font-size: 13px; */
+  line-height: 1.3em;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: 1px solid rgb(168, 168, 168);
+  }
+code {
+  padding: 2px 4px;
+}
+
+mark {
+  padding: .2em;
+  background-color: #fffc4d;
 }

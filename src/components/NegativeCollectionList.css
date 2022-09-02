@@ -16,3 +16,18 @@
     background-color: rgb(219, 0, 0);
     /* transform: scale(1.1); */
 }
+.negative-btn-clear{
+    padding: 4px 8px;
+}
+.negative-btn-IDclear {
+    cursor: pointer;
+    padding-left: 8px;
+    background: none;
+    outline: none;
+    border: none;
+    color: rgb(27, 27, 27);
+    transition: all 0.3s;
+}
+.negative-btn-IDclear:hover {
+    color: rgb(255, 255, 255);
+}

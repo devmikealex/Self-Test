@@ -30,7 +30,9 @@ export default function Card(props) {
                 <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
                 <LinksList />
             </div>
-            <BtnsPosNeg passed={passed} func={btnAnswer}/>
+            {['final', 'notfound', 'error'].includes(props.titleCode)
+                ? null
+                : <BtnsPosNeg passed={passed} func={btnAnswer}/>}
         </div>
     );
 
@@ -81,7 +83,7 @@ function dataStructuring(text) {
             hasLinks = true;
             break;
         }
-        description += lines[i];
+        description += lines[i]+'\n';
     }
 
     const links = [];
@@ -97,6 +99,8 @@ function dataStructuring(text) {
         links,
         passed: 'none'
     };
+
+    console.log('description', description);
 
     return data;
 }

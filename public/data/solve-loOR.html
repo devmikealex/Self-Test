@@ -1,0 +1,30 @@
+﻿Логический оператор || ИЛИ
+%%
+Как работает и решение задачи
+
+<pre>const one = false || {} || null;
+const two = null || false || "";
+const three = "" || [] || true;
+&nbsp;
+console.log(one, two, three);</pre>
+<p><strong>Объяснение:</strong></p>
+<p>
+    Оператор <code>||</code> возвращает <mark>первое истинное значение</mark>, если же все
+    операнды оказываются ложными то возвращается <mark>последний</mark>. Вычисляет операнды слева направо.
+    Значение возвращается в <mark>исходном виде</mark>. В первом выражении
+    истинным значением является только <code>{}</code>. Во втором выражении нет
+    не одного истинного операнда поэтому возвращается пустая строка. В третьем
+    выражении истинным является пустой массив.
+</p>
+<p><strong>Ответ:</strong></p>
+<p><code>{} "" []</code></p>
+
+%%
+Логический оператор && - И
+/?alias=solve-loAND
+Логические операторы - learn.javascript.ru
+https://learn.javascript.ru/logical-operators
+Решение 1 – Telegraph
+https://telegra.ph/Reshenie-08-13-10
+Решение 2 и оператор && – Telegraph
+https://telegra.ph/Reshenie-08-27-4

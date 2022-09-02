@@ -1,22 +1,9 @@
 [
-  {
-    "alias": "ECMA",
-    "title": "ECMAtitle"
-  },
-  {
-    "alias": "JSON",
-    "title": "JSONtitle"
-  },
-  {
-    "alias": "CSS",
-    "title": "CSStitle"
-  },
-  {
-    "alias": "HTML",
-    "title": "HTMLtitle"
-  },
-  {
-    "alias": "pseudoClass",
-    "title": "Псевдоклассы"
-  }
+  { "alias": "ECMA", "title": "ECMAtitle" },
+  { "alias": "JSON", "title": "JSONtitle" },
+  { "alias": "CSS", "title": "CSStitle" },
+  { "alias": "HTML", "title": "HTMLtitle" },
+  { "alias": "pseudoClass", "title": "Псевдоклассы" },
+  { "alias": "solve-loOR", "title": "Задача про логический оператор || ИЛИ" },
+  { "alias": "solve-loAND", "title": "Задача про логический оператор && И" }
 ]
