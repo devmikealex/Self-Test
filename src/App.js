@@ -162,12 +162,18 @@ export default function App() {
 
     return (
         <div className="App">
-            <div className="container-header">
-                <button className="btns random-btn" onClick={randomButton}>
-                    &#9851; {btnName}
-                </button>
+            <div className="container-footer">
+                <div class="columns3-footer">
+                    <div class="footer1"><ShowResponseCounterPos/></div>
+                    <div class="footer2">
+                        <button className="btns random-btn" onClick={randomButton}>
+                            &#9851; {btnName}
+                        </button>
+                    </div>
+                    <div class="footer3"><ShowResponseCounterNeg/></div>
+                </div>
                 <NegativeCollectionList array={negativeCollection} funcBtn={funcBtnShowOnTOP} funcBtnClear={funcBtnClear} />
-                <ShowResponseCounter />
+                {/* <ShowResponseCounter /> */}
             </div>
             <div className="container-card">
                 {openedCollection.map((alias) => (
@@ -176,6 +182,28 @@ export default function App() {
             </div>
         </div>
     );
+
+    function ShowResponseCounterPos() {
+        if (positiveResponse) {
+            return (
+                <div className="response-counter">
+                    Помню: {positiveResponse}
+                </div>
+            );
+        }
+        return null;
+    }
+
+    function ShowResponseCounterNeg() {
+        if (negativeResponse) {
+            return (
+                <div className="response-counter">
+                    Не помню: {negativeResponse}
+                </div>
+            );
+        }
+        return null;
+    }
 
     function ShowResponseCounter() {
         if (negativeResponse + positiveResponse) {

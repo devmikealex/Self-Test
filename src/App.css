@@ -1,4 +1,4 @@
-.container-header {
+.container-footer {
   width: 100%;
   z-index: 10;
   /* position: sticky; */
@@ -40,4 +40,28 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: 8em;
+}
+
+
+
+.columns3-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer1 {
+  flex-grow: 1;
+  text-align: right;
+  margin: auto;
+  flex-basis: 20%;
+}
+.footer2 {
+  flex-basis: 344px;
+  flex-grow: 0;
+  margin: auto;
+}
+.footer3 {
+  flex-grow: 1;
+  text-align: left;
+  margin: auto;
+  flex-basis: 20%;
 }

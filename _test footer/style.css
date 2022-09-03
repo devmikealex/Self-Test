@@ -14,6 +14,29 @@ body {
     border-right: 1px solid #111; */
     margin: 0 22.5%;
 }
+
+.columns3-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer1 {
+    background-color:aqua;
+    flex-grow: 1;
+    /* text-align: left; */
+}
+.footer2 {
+    background-color:rgb(0, 255, 55);
+    flex-basis: 300px;
+    flex-grow: 0;
+}
+.footer3 {
+    background-color:rgb(0, 8, 255);
+    flex-grow: 1;
+    /* text-align: right; */
+}
+
+
 #container {
     color: white;
     margin-bottom: 2em;
