@@ -9,7 +9,7 @@
   bottom: 0;
 
   background-color: #2BACD7;
-  background: linear-gradient(0deg, #18b3e7, #067fc1);
+  background: linear-gradient(180deg, #18b3e7, #067fc1);
   text-align: center;
   padding: 4px;
 }
@@ -17,12 +17,13 @@
 .random-btn {
   border: 1px solid #064664;
   background-color: #e4f6ff;
-  color: #006897;
+  color: #00537a;
   text-shadow: 0 2px 3px rgba(255, 255, 255, 0.8);
 }
 .random-btn:hover {
   background: white;
   padding: 10px 40px;
+  color: #ab0000;
   /* border-color: #004c6f; */
 }
 
@@ -40,9 +41,8 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: 8em;
+  margin-top: 0.8em;
 }
-
-
 
 .columns3-footer {
   display: flex;

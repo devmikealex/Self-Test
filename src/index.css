@@ -10,8 +10,6 @@ body {
   overflow: scroll;
 }
 
-
-
 .btns {
   border-radius: 8px;
   cursor: pointer;
@@ -25,9 +23,16 @@ h2, h3 {
   text-align: center;
   margin: 10px 0;
 }
+h3 {
+  color:#6a6a6a;
+}
+h4 {
+  font-size: 1.1em;
+  margin-top: 14px;
+}
 
 hr {
-  margin-top: 16px;
+  margin: 8px 80px 4px 80px;
   border-top: 2px dashed #9fa9ae;
 	border-bottom: 1px dashed #fff;
 }
@@ -43,7 +48,7 @@ p {
 
 ul {
   padding: 6px;
-  margin: 6px 20px;
+  margin: 4px 20px;
   margin-bottom: 0;
   padding-bottom: 0;
 }

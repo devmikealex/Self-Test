@@ -81,8 +81,8 @@ export default function App() {
                 if (reservedCollection.includes(cardAlias)) {
                     indexCardForOpen = reservedCollection.indexOf(cardAlias);
                 } else {
-                    console.warn(`Alias ${cardAlias} not found in collection`);
-                    return ["notfound", ...openedCollection];
+                    console.warn(`Alias '${cardAlias}' not found in collection`);
+                    return ["_notfound", ...openedCollection];
                 }
             }
             cardForOpen = reservedCollection.splice(indexCardForOpen, 1);
@@ -92,8 +92,8 @@ export default function App() {
             return [cardForOpen[0], ...openedCollection];
         } else {
             // if (openedCollection[0] !== "final") {
-            if (!openedCollection.includes("final")) {
-                return ["final", ...openedCollection];
+            if (!openedCollection.includes("_final")) {
+                return ["_final", ...openedCollection];
             }
             return null;
         }
@@ -163,14 +163,14 @@ export default function App() {
     return (
         <div className="App">
             <div className="container-footer">
-                <div class="columns3-footer">
-                    <div class="footer1"><ShowResponseCounterPos/></div>
-                    <div class="footer2">
+                <div className="columns3-footer">
+                    <div className="footer1"><ShowResponseCounterPos/></div>
+                    <div className="footer2">
                         <button className="btns random-btn" onClick={randomButton}>
                             &#9851; {btnName}
                         </button>
                     </div>
-                    <div class="footer3"><ShowResponseCounterNeg/></div>
+                    <div className="footer3"><ShowResponseCounterNeg/></div>
                 </div>
                 <NegativeCollectionList array={negativeCollection} funcBtn={funcBtnShowOnTOP} funcBtnClear={funcBtnClear} />
                 {/* <ShowResponseCounter /> */}

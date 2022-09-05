@@ -31,10 +31,11 @@ export default function Card(props) {
             <h2>{dataOBJ.title}</h2>
             { dataOBJ.abbr ? <h3>{dataOBJ.abbr}</h3> : null }
             <div className={"secret " + passed2}>
+                <hr />
                 <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
                 <LinksList />
             </div>
-            {[props.queryString, 'final', 'notfound', 'error'].includes(props.titleCode)
+            {[props.queryString, '_final', '_notfound', '_error'].includes(props.titleCode)
                 ? null
                 : <BtnsPosNeg passed={passed} func={btnAnswer}/>}
         </div>
