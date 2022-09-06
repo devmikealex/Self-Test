@@ -1,0 +1,11 @@
+[
+  { "alias": "ECMA", "title": "ECMAtitle" },
+  { "alias": "JSON", "title": "JSONtitle" },
+  { "alias": "CSS", "title": "CSStitle" },
+  { "alias": "HTML", "title": "HTMLtitle" },
+  { "alias": "pseudoClass", "title": "Псевдоклассы" },
+  { "alias": "solve-loOR", "title": "Задача про логический оператор || ИЛИ - Решение задачи" },
+  { "alias": "solve-loAND", "title": "Задача про логический оператор && И - Решение задачи" },
+  { "alias": "solve-trycatchfinally", "title": "Что вернет функция с несколькими return и try, catch, finally - Решение задачи" },
+  { "alias": "solve-thisfunc", "title": "На что ссылается this внутри стрелочной и обычной функции - Решение задачи" }
+]

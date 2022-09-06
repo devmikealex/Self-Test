@@ -1,8 +1,22 @@
-// import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./NegativeCollectionList.css";
 
 export default function NegativeCollectionList(props) {
     console.log("FUNC NegativeCollectionList", props.array);
+
+    useEffect(() => {
+        // The After-Render Hook
+        
+        // const clientHeight = document.getElementsByClassName('container-footer')[0].clientHeight;
+        // console.log("🚀 ~ file: NegativeCollectionList.js ~ line 10 ~ useEffect ~ clientHeight", clientHeight)
+        const offsetHeight = +document.getElementsByClassName('container-footer')[0].offsetHeight;
+        console.log("🚀 ~ file: NegativeCollectionList.js ~ line 12 ~ useEffect ~ offsetHeight", offsetHeight)
+        // clientHeight includes padding.
+        // offsetHeight includes padding, scrollBar and borders.
+        const c = document.getElementsByClassName('container-card')[0]
+        c.style.marginBottom = `${offsetHeight+10}px`
+    });
+
     if (props.array.length) {
         return (
             <div>

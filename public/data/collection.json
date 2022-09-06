@@ -1,11 +1,47 @@
 [
-  { "alias": "ECMA", "title": "ECMAtitle" },
-  { "alias": "JSON", "title": "JSONtitle" },
-  { "alias": "CSS", "title": "CSStitle" },
-  { "alias": "HTML", "title": "HTMLtitle" },
-  { "alias": "pseudoClass", "title": "Псевдоклассы" },
-  { "alias": "solve-loOR", "title": "Задача про логический оператор || ИЛИ - Решение задачи" },
-  { "alias": "solve-loAND", "title": "Задача про логический оператор && И - Решение задачи" },
-  { "alias": "solve-trycatchfinally", "title": "Что вернет функция с несколькими return и try, catch, finally - Решение задачи" },
-  { "alias": "solve-thisfunc", "title": "На что ссылается this внутри стрелочной и обычной функции - Решение задачи" }
+  {
+    "alias": "CSS",
+    "search": "%%",
+    "title": "CSS"
+  },
+  {
+    "alias": "ECMA",
+    "search": "SEARCH",
+    "title": "ECMAScript"
+  },
+  {
+    "alias": "HTML",
+    "search": "HTML Hypertext Markup Language",
+    "title": "HTML"
+  },
+  {
+    "alias": "JSON",
+    "search": "%%",
+    "title": "JSON"
+  },
+  {
+    "alias": "pseudoClass",
+    "search": "%%",
+    "title": "РџСЃРµРІРґРѕРєР»Р°СЃСЃС‹ 222"
+  },
+  {
+    "alias": "solve-loAND",
+    "search": "%%",
+    "title": "Р›РѕРіРёС‡РµСЃРєРёР№ РѕРїРµСЂР°С‚РѕСЂ && - Р"
+  },
+  {
+    "alias": "solve-loOR",
+    "search": "%%",
+    "title": "Р›РѕРіРёС‡РµСЃРєРёР№ РѕРїРµСЂР°С‚РѕСЂ || РР›Р"
+  },
+  {
+    "alias": "solve-thisfunc",
+    "search": "%%",
+    "title": "this РІРЅСѓС‚СЂРё РѕР±СЉРµРєС‚Р° Рё С„СѓРЅРєС†РёРё"
+  },
+  {
+    "alias": "solve-trycatchfinally",
+    "search": "%%",
+    "title": "Р’С‹РїРѕР»РЅРµРЅРёРµ try - catch - finally"
+  }
 ]

@@ -28,7 +28,7 @@ export default function Card(props) {
 
     return (
         <div className={"card " + passed2}>
-            <h2>{dataOBJ.title}</h2>
+            <h2><a href={`/?alias=${props.titleCode}`}>{dataOBJ.title}</a></h2>
             { dataOBJ.abbr ? <h3>{dataOBJ.abbr}</h3> : null }
             <div className={"secret " + passed2}>
                 <hr />
@@ -100,9 +100,9 @@ function dataStructuring(text) {
     const BASE_LINE = 0
     const title = lines[BASE_LINE];
     let abbr = null;
-    let startIndex = BASE_LINE + 1;
-    if (lines[BASE_LINE+1] === "%%") {
-        abbr = lines[BASE_LINE + 2];
+    let startIndex = BASE_LINE + 2;
+    if (lines[startIndex] === "%%") {
+        abbr = lines[BASE_LINE + 3];
         startIndex += 2;
     }
 

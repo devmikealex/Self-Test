@@ -1,0 +1,17 @@
+{
+  "name": "data-conversion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^2.0.3",
+    "n-readlines": "^1.0.1"
+  }
+}

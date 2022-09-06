@@ -8,8 +8,11 @@ export default function Preview(props) {
         const previewImage = `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`
         return (
             <>
-                <br/>
-                <img className="yt-preview" src={previewImage} alt="YouTube preview"/>
+            <br/>
+            <div className="yt-container">
+                <img className="yt-preview-img" src={previewImage} alt={`YouTube preview ${videoID}`}/>
+                <div className="yt-overlay">YouTube</div>
+            </div>
             </>
         )
     }

@@ -1,5 +1,21 @@
-.yt-preview {
+.yt-container {
+    position: relative;
+    /* width: 300px; */
+}
+.yt-preview-img {
     margin-top: 8px;
     border: 1px rgb(11, 94, 149) solid;
-    /* display: block; */
+    /* width: 100%; */
+    /* height: auto; */
+    display: block;
+}
+.yt-overlay {
+    position: absolute;
+    bottom: 14px;
+    background: rgba(255, 0, 0, 0.6); /* Black see-through */
+    color: white;
+    /* width: 100%; */
+    padding: 4px 16px;
+    /* text-align: center; */
+    opacity: 95%;
 }
