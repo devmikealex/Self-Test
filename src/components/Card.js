@@ -48,9 +48,14 @@ export default function Card(props) {
                 <ul>
                     {dataOBJ.links.map((item) => {
                         const [urlTitle, url, key] = item;
+                        let newURL = url
+                        if (url.startsWith('?alias=')) {
+                            const pageURL = window.location.pathname 
+                            newURL = pageURL + url
+                        }
                         return (
                             <li key={key}>
-                                <a href={url} target='_blank' rel='noreferrer'>{urlTitle}
+                                <a href={newURL} target='_blank' rel='noreferrer'>{urlTitle}
                                 <Preview url={url} /></a>
                             </li>
                         );
