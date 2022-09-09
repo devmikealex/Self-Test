@@ -50,7 +50,12 @@ export default function Card(props) {
                         const [urlTitle, url, key] = item;
                         let newURL = url
                         if (url.startsWith('?alias=')) {
-                            const pageURL = window.location.pathname 
+                            let pageURL = window.location.pathname
+                            // let pageURL = window.location.href
+                            // const s = pageURL.indexOf('?')
+                            // if (s !== -1) {
+                            //     pageURL = pageURL.slice(0, s)
+                            // }
                             newURL = pageURL + url
                         }
                         return (

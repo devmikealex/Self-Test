@@ -21,13 +21,13 @@ app.get("/", (req, res) => {
     res.redirect("index.html")
 })
 
-app.get("/favicon.ico", (req, res) => {
-    res.sendFile(__dirname + "/favicon.ico")
-})
-
 const pathStatic = path.join(__dirname, "..", "build");
 console.log("pathStatic", pathStatic)
 app.use(express.static(pathStatic))
+
+app.get("/favicon.ico", (req, res) => {
+    res.sendFile(pathStatic + "/favicon.ico")
+})
 
 app.listen(PORT, () => {
     console.log(`Ser Start http://127.0.0.1:${PORT}`);
