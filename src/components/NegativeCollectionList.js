@@ -22,9 +22,13 @@ export default function NegativeCollectionList(props) {
             <div>
                 {props.array.map((item) => {
                     const [alias, title] = item;
+                    let newTitle = title.slice(0, 16).trim();
+                    if (!(newTitle.length === title.length)) {
+                        newTitle +='\u2026' // добавить многоточие ...
+                    }
                     return (
                         <button className="negative-btn" onClick={() => props.funcBtn(alias)} key={alias}>
-                            {title}
+                            {newTitle}
                             <span className="negative-btn-IDclear" onClick={(e)=>{
                                 console.log(e);
                                 e.stopPropagation();

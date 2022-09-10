@@ -3,6 +3,7 @@
   z-index: 10;
   position: sticky;
   top: 0px;
+
   background-color: #2BACD7;
   background: linear-gradient(0deg, #18b3e7, #067fc1);
   text-align: center;
@@ -12,9 +13,13 @@
 .container-footer {
   width: 100%;
   z-index: 10;
+  /* position: sticky; */
+  /* top: 0px; */
+
   position: fixed;
   left: 0;
   bottom: 0;
+
   background-color: #2BACD7;
   background: linear-gradient(180deg, #18b3e7, #067fc1);
   text-align: center;
@@ -71,4 +76,34 @@
   text-align: left;
   margin: auto;
   flex-basis: 20%;
+}
+
+form > label {
+  color: white;
+  margin-right: 8px;
+}
+form > input {
+  /* width: 140px; */
+  padding: 4px 8px;
+  border: 1px solid #024c75;
+  border-radius: 8px;
+  background-color: #e7f4fc;
+}
+input:focus{
+  /* outline: 1px solid #006195; */
+  outline: none;
+  box-shadow: 0px 0px 6px 1px rgba(0, 55, 101, 0.3);
+  background-color: #fff;
+}
+input::placeholder {
+  color: #073059;
+  opacity: 0.4;
+}
+form > button {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 4px;
+  transition: all .3s;
+  font-size: 1.2em;	
 }

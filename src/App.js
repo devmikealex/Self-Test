@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Card from "./components/Card";
 import NegativeCollectionList from "./components/NegativeCollectionList";
+import Header from "./components/Header";
 import "./App.css";
 
 const COLLECTION_URL = "/data/collection.json";
@@ -160,8 +161,33 @@ export default function App() {
         saveNegColToLocStor([])
     }
 
+    // function openOnTop(e){
+    //     e.preventDefault()
+    //     const alias = e.target.alias.value
+    //     funcBtnShowOnTOP(alias)
+    // }
+    // function openNewPage(e){
+    //     e.preventDefault()
+    //     const alias = e.target.alias.value
+    //     window.open(`${window.location.pathname}?alias=${alias}`, "_blank");
+    // }
+    function openAlias(e){
+        e.preventDefault()
+        const alias = e.target.alias.value
+        switch (e.nativeEvent.submitter.value) {
+            case 'open':
+                funcBtnShowOnTOP(alias)
+                break;
+            case 'openNewPage':
+                window.open(`${window.location.pathname}?alias=${alias}`, "_blank");
+                break;      
+            default:
+        }
+    }
+
     return (
         <div className="App">
+        <Header formFunc={openAlias}/>
             <div className="container-footer">
                 <div className="columns3-footer">
                     <div className="footer1"><ShowResponseCounterPos/></div>
@@ -205,14 +231,14 @@ export default function App() {
         return null;
     }
 
-    function ShowResponseCounter() {
-        if (negativeResponse + positiveResponse) {
-            return (
-                <div className="response-counter">
-                    Помню: {positiveResponse} - Не помню: {negativeResponse}
-                </div>
-            );
-        }
-        return null;
-    }
+    // function ShowResponseCounter() {
+    //     if (negativeResponse + positiveResponse) {
+    //         return (
+    //             <div className="response-counter">
+    //                 Помню: {positiveResponse} - Не помню: {negativeResponse}
+    //             </div>
+    //         );
+    //     }
+    //     return null;
+    // }
 }
