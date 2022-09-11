@@ -83,7 +83,7 @@ export default function App() {
                     indexCardForOpen = reservedCollection.indexOf(cardAlias);
                 } else {
                     console.warn(`Alias '${cardAlias}' not found in collection`);
-                    return ["_notfound", ...openedCollection];
+                    return ["_notfound_" + cardAlias + "_" + (new Date()).getTime(), ...openedCollection];
                 }
             }
             cardForOpen = reservedCollection.splice(indexCardForOpen, 1);
@@ -176,7 +176,12 @@ export default function App() {
         const alias = e.target.alias.value
         switch (e.nativeEvent.submitter.value) {
             case 'open':
-                funcBtnShowOnTOP(alias)
+                if(openedCollection.includes(alias)){
+                    funcBtnShowOnTOP(alias)
+                } else {
+                    const newCollection = openCard(alias);
+                    if (newCollection) setOpenedCollection(newCollection);
+                }
                 break;
             case 'openNewPage':
                 window.open(`${window.location.pathname}?alias=${alias}`, "_blank");

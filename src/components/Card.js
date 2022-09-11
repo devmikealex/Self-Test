@@ -8,11 +8,18 @@ export default function Card(props) {
     const [passed, setPassed] = useState('none')
 
     useEffect(() => {
-        fetch("/data/" + props.titleCode + ".html")
+        let titleCode = props.titleCode
+        if (titleCode.includes('_notfound_')) {
+            titleCode = '_notfound'
+        }       
+        fetch("/data/" + titleCode + ".html")
             .then((response) => response.text())
             .then((text) => {
                 console.log('Card Fetch', props.titleCode);
                 const obj = dataStructuring(text);
+                if (props.titleCode.includes('_notfound_')) {
+                    obj.abbr = props.titleCode
+                }
                 setDataOBJ(obj)
             })
             .catch((err) => {
@@ -25,6 +32,11 @@ export default function Card(props) {
     if (props.queryString === props.titleCode) {
         passed2 = 'neutral'
     }
+    let noButtonsArray = [props.queryString, '_final', '_notfound', '_error']
+    if (props.titleCode.includes('_notfound_')) {
+        passed2 = 'error'
+        noButtonsArray.push(props.titleCode)
+    }
 
     return (
         <div className={"card " + passed2}>
@@ -35,7 +47,7 @@ export default function Card(props) {
                 <div dangerouslySetInnerHTML={{__html: dataOBJ.description}} />
                 <LinksList />
             </div>
-            {[props.queryString, '_final', '_notfound', '_error'].includes(props.titleCode)
+            {noButtonsArray.includes(props.titleCode)
                 ? null
                 : <BtnsPosNeg passed={passed} func={btnAnswer}/>}
         </div>

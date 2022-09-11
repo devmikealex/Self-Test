@@ -1,47 +1,47 @@
 [
   {
     "alias": "CSS",
-    "search": "%%",
+    "search": "cascading style sheets css каскадные таблицы стилей",
     "title": "CSS"
   },
   {
     "alias": "ECMA",
-    "search": "SEARCH",
+    "search": "ecmascript adasd search",
     "title": "ECMAScript"
   },
   {
     "alias": "HTML",
-    "search": "HTML Hypertext Markup Language",
+    "search": "html hypertext markup language разметка гипертекст",
     "title": "HTML"
   },
   {
     "alias": "JSON",
-    "search": "%%",
+    "search": "json javascript object notation a",
     "title": "JSON"
   },
   {
     "alias": "pseudoClass",
-    "search": "%%",
+    "search": "псевдоклассы %%",
     "title": "Псевдоклассы 222"
   },
   {
     "alias": "solve-loAND",
-    "search": "%%",
+    "search": "логический оператор %%",
     "title": "Логический оператор && - И"
   },
   {
     "alias": "solve-loOR",
-    "search": "%%",
+    "search": "логический оператор %%",
     "title": "Логический оператор || ИЛИ"
   },
   {
     "alias": "solve-thisfunc",
-    "search": "%%",
+    "search": "this внутри объекта функции %%",
     "title": "this внутри объекта и функции"
   },
   {
     "alias": "solve-trycatchfinally",
-    "search": "%%",
+    "search": "выполнение catch finally вернет функция несколькими return решение задачи try",
     "title": "Выполнение try - catch - finally"
   }
 ]

@@ -20,6 +20,11 @@
     border: 2px solid #446d9b;
     background-color: #e1edfbda;
 }
+.card.error{
+    border: 8px solid #ff0000;
+    background-color: #ffc2c2da;
+    text-align: center;
+}
 
 .secret {
     transition: all 0.5s;
