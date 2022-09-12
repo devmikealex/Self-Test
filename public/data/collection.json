@@ -6,7 +6,7 @@
   },
   {
     "alias": "ECMA",
-    "search": "ecmascript adasd search",
+    "search": "ecmascript ecma adasd search",
     "title": "ECMAScript"
   },
   {
@@ -21,27 +21,27 @@
   },
   {
     "alias": "pseudoClass",
-    "search": "псевдоклассы %%",
+    "search": "псевдоклассы pseudoclass %%",
     "title": "Псевдоклассы 222"
   },
   {
     "alias": "solve-loAND",
-    "search": "логический оператор %%",
+    "search": "логический оператор solveloand %%",
     "title": "Логический оператор && - И"
   },
   {
     "alias": "solve-loOR",
-    "search": "логический оператор %%",
+    "search": "логический оператор solveloor %%",
     "title": "Логический оператор || ИЛИ"
   },
   {
     "alias": "solve-thisfunc",
-    "search": "this внутри объекта функции %%",
+    "search": "this внутри объекта функции solvethisfunc %%",
     "title": "this внутри объекта и функции"
   },
   {
     "alias": "solve-trycatchfinally",
-    "search": "выполнение catch finally вернет функция несколькими return решение задачи try",
+    "search": "выполнение catch finally solvetrycatchfinally вернет функция несколькими return решение задачи try",
     "title": "Выполнение try - catch - finally"
   }
 ]

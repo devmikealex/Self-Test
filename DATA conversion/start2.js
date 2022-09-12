@@ -45,6 +45,7 @@ htmlFilesList.forEach((file) => {
     console.log("---");
     
     const title = line1.toString("utf8").slice(0, -1).trim()
+    const alias = file.slice(0, -5)
     let searchByHand = line2.toString("utf8").slice(0, -1).trim()
     let abbr = ''
 
@@ -52,7 +53,7 @@ htmlFilesList.forEach((file) => {
     if (a === '%%'){
         abbr = line4.toString("utf8").slice(0, -1).trim()
     }
-    let search = `${title} ${abbr}`
+    let search = `${title} ${alias} ${abbr}`
     search = search.toLowerCase()
     search = search.replace(/[^а-яёa-zA-Z0-9_\s]/g, '') // удаление не букв и не цифр
     search = search.replace(/\s+/g, ' ') // удаление пробелов подряд
@@ -69,7 +70,7 @@ htmlFilesList.forEach((file) => {
     search = `${search} ${searchByHand}`
     
     data.push({
-        alias: file.slice(0, -5),
+        alias,
         search,
         title 
     });

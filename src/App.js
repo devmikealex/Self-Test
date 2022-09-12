@@ -26,8 +26,8 @@ export default function App() {
     }
 
     const handleKeyPress = useCallback((event) => {
-        console.log(`Key pressed: ${event.key}`);
-        console.log("---", openedCollection);
+        // console.log(`Key pressed: ${event.key}`);
+        // console.log("---", openedCollection);
         if (event.key === ' ') {
             event.preventDefault();
             if(!event.repeat) {
@@ -171,17 +171,12 @@ export default function App() {
     //     const alias = e.target.alias.value
     //     window.open(`${window.location.pathname}?alias=${alias}`, "_blank");
     // }
-    function openAlias(e){
+    function openAliasEvent(e){
         e.preventDefault()
         const alias = e.target.alias.value
         switch (e.nativeEvent.submitter.value) {
             case 'open':
-                if(openedCollection.includes(alias)){
-                    funcBtnShowOnTOP(alias)
-                } else {
-                    const newCollection = openCard(alias);
-                    if (newCollection) setOpenedCollection(newCollection);
-                }
+                openAlias(alias)
                 break;
             case 'openNewPage':
                 window.open(`${window.location.pathname}?alias=${alias}`, "_blank");
@@ -189,10 +184,18 @@ export default function App() {
             default:
         }
     }
+    function openAlias(alias) {
+        if(openedCollection.includes(alias)){
+            funcBtnShowOnTOP(alias)
+        } else {
+            const newCollection = openCard(alias);
+            if (newCollection) setOpenedCollection(newCollection);
+        } 
+    }
 
     return (
         <div className="App">
-        <Header formFunc={openAlias}/>
+        <Header openAliasEvent={openAliasEvent} openAlias={openAlias} fullCollection={fullCollection} />
             <div className="container-footer">
                 <div className="columns3-footer">
                     <div className="footer1"><ShowResponseCounterPos/></div>
