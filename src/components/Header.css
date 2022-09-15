@@ -1,3 +1,7 @@
+.search-form {
+    display: inline-block;
+}
+
 .text-field__icon label {
     color: white;
     margin-right: 6px;
@@ -14,7 +18,7 @@
     padding: 4px 8px;
     padding-right: 30px;
     border: 1px solid #024c75;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     background-color: #e7f4fc;
     height: 2em;
 }
@@ -47,8 +51,8 @@
     pointer-events: none;
 }
 
-form>button {
-    border-radius: 8px;
+.header__btn {
+    border-radius: var(--border-radius);
     cursor: pointer;
     padding: 2px 8px;
     margin: 2px 2px;
@@ -60,6 +64,6 @@ form>button {
     text-shadow: 0 2px 3px rgba(255, 255, 255, 0.8);
 }
 
-form>button:hover {
+.header__btn:hover {
     background: white;
 }

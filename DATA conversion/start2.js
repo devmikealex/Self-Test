@@ -47,6 +47,8 @@ htmlFilesList.forEach((file) => {
     const title = line1.toString("utf8").slice(0, -1).trim()
     const alias = file.slice(0, -5)
     let searchByHand = line2.toString("utf8").slice(0, -1).trim()
+    if (searchByHand === '-') searchByHand=''
+    else searchByHand = ' ' + searchByHand 
     let abbr = ''
 
     const a = line3.toString("utf8").slice(0, -1).trim()
@@ -67,7 +69,7 @@ htmlFilesList.forEach((file) => {
     searchByHand = searchByHand.replace(/\s+/g, ' ')
     searchByHand = searchByHand.trim()
 
-    search = `${search} ${searchByHand}`
+    search = `${search}${searchByHand}`
     
     data.push({
         alias,

@@ -1,47 +1,62 @@
 [
   {
+    "alias": "AJAX",
+    "search": "ajax asynchronous javascriptасинхронный xml",
+    "title": "AJAX"
+  },
+  {
     "alias": "CSS",
-    "search": "cascading style sheets css каскадные таблицы стилей",
+    "search": "cascading style sheetscss каскадные таблицы стилей",
     "title": "CSS"
   },
   {
     "alias": "ECMA",
-    "search": "ecmascript ecma adasd search",
+    "search": "ecmascript ecmaes ecma javascript",
     "title": "ECMAScript"
   },
   {
     "alias": "HTML",
-    "search": "html hypertext markup language разметка гипертекст",
+    "search": "html hypertext markup languageразметка гипертекст",
     "title": "HTML"
   },
   {
     "alias": "JSON",
-    "search": "json javascript object notation a",
+    "search": "json javascript object notation",
     "title": "JSON"
   },
   {
     "alias": "pseudoClass",
-    "search": "псевдоклассы pseudoclass %%",
-    "title": "Псевдоклассы 222"
+    "search": "псевдоклассы pseudoclass pseudoclassescss pseudoclasses псевдокласс псевдо класс hover",
+    "title": "Псевдоклассы в CSS"
+  },
+  {
+    "alias": "pseudoElem",
+    "search": "псевдоэлементы pseudoelem pseudoelementscss pseudoelements псевдоэлемент псевдо элемент before after first",
+    "title": "Псевдоэлементы в CSS"
   },
   {
     "alias": "solve-loAND",
-    "search": "логический оператор solveloand %%",
+    "search": "логический оператор solveloand%%",
     "title": "Логический оператор && - И"
   },
   {
     "alias": "solve-loOR",
-    "search": "логический оператор solveloor %%",
+    "search": "логический оператор solveloor%%",
     "title": "Логический оператор || ИЛИ"
   },
   {
     "alias": "solve-thisfunc",
-    "search": "this внутри объекта функции solvethisfunc %%",
+    "search": "this внутри объекта функции solvethisfunc%%",
     "title": "this внутри объекта и функции"
   },
   {
     "alias": "solve-trycatchfinally",
-    "search": "выполнение catch finally solvetrycatchfinally вернет функция несколькими return решение задачи try",
+    "search": "выполнение catch finally solvetrycatchfinally вернет функция несколькими return решение задачиtry",
     "title": "Выполнение try - catch - finally"
+  },
+  {
+    "alias": "W3C",
+    "search": "world wide consortiumw3c консорциум всемирной паутины www",
+    "title": "W3C"
   }
 ]

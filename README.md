@@ -1,6 +1,17 @@
 How to add keyboard shortcuts to your React app - Devtrium
 https://devtrium.com/posts/how-keyboard-shortcut
 
+Стилизация текстовых полей формы - ИТ Шеф
+https://itchief.ru/html-and-css/styling-text-input
+
+\node_modules\react-scripts\config\webpackDevServer.config.js
+    historyApiFallback: false,
+[historyApiFallback - DevServer | webpack](https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

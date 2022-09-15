@@ -86,7 +86,7 @@ form > input {
   /* width: 140px; */
   padding: 4px 8px;
   border: 1px solid #024c75;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background-color: #e7f4fc;
 }
 input:focus{
@@ -100,7 +100,7 @@ input::placeholder {
   opacity: 0.4;
 }
 form > button {
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   padding: 10px 20px;
   margin: 4px;

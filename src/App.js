@@ -2,14 +2,16 @@ import { useState, useEffect, useCallback } from "react";
 import Card from "./components/Card";
 import NegativeCollectionList from "./components/NegativeCollectionList";
 import Header from "./components/Header";
+import SideCount from "./components/SideCount";
 import "./App.css";
 
 const COLLECTION_URL = "/data/collection.json";
-const RANDOM_BUTTON_DEFAULT = "Get Random Card";
+const RANDOM_BUTTON_DEFAULT = "Случайная карточка";
 
 let fullCollection = [];
 let reservedCollection = [];
 let queryString;
+let genGetID = getID();
 
 export default function App() {
     const [openedCollection, setOpenedCollection] = useState([]);
@@ -83,7 +85,8 @@ export default function App() {
                     indexCardForOpen = reservedCollection.indexOf(cardAlias);
                 } else {
                     console.warn(`Alias '${cardAlias}' not found in collection`);
-                    return ["_notfound_" + cardAlias + "_" + (new Date()).getTime(), ...openedCollection];
+                    // return ["_notfound_" + cardAlias + "_" + (new Date()).getTime(), ...openedCollection];
+                    return ["_notfound_" + cardAlias + "_" + genGetID.next().value, ...openedCollection];
                 }
             }
             cardForOpen = reservedCollection.splice(indexCardForOpen, 1);
@@ -173,7 +176,11 @@ export default function App() {
     // }
     function openAliasEvent(e){
         e.preventDefault()
-        const alias = e.target.alias.value
+        let alias = e.target.alias.value
+        console.log("🚀 ~ file: App.js ~ line 179 ~ openAliasEvent ~ alias", alias)
+        console.log(typeof alias);
+        
+        if (alias.endsWith('.html')) alias = alias.slice(0, -5)
         switch (e.nativeEvent.submitter.value) {
             case 'open':
                 openAlias(alias)
@@ -195,7 +202,9 @@ export default function App() {
 
     return (
         <div className="App">
-        <Header openAliasEvent={openAliasEvent} openAlias={openAlias} fullCollection={fullCollection} />
+            <Header openAliasEvent={openAliasEvent} openAlias={openAlias} fullCollection={fullCollection} />
+            {/* <div className="side-counter">{`${fullCollection.length}/${openedCollection.length}`}</div> */}
+            <SideCount fullCollectionlength = {fullCollection.length} openedCollectionlength = {openedCollection.length}/>
             <div className="container-footer">
                 <div className="columns3-footer">
                     <div className="footer1"><ShowResponseCounterPos/></div>
@@ -249,4 +258,12 @@ export default function App() {
     //     }
     //     return null;
     // }
+}
+
+function *getID() {
+    let id = 0
+    while (1) {
+        id++
+        yield id
+    }
 }
