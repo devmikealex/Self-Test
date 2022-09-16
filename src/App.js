@@ -71,6 +71,11 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    useEffect(() => {
+        ChangeDocTitle(openedCollection[0])
+        window.scrollTo(0, 0)
+    }, [openedCollection]);
+
     function openCard(cardAlias) {
         console.log('FUNC openCard');
         console.log('cardAlias', cardAlias);
@@ -150,6 +155,7 @@ export default function App() {
             onTopElement = cardForOpen[0]
         }
         setOpenedCollection([onTopElement, ...openedCollection]);
+        // ChangeDocTitle(alias)
     }
 
     function saveNegColToLocStor(array) {
@@ -192,6 +198,7 @@ export default function App() {
         }
     }
     function openAlias(alias) {
+        // window.scrollTo(0, 0);
         if(openedCollection.includes(alias)){
             funcBtnShowOnTOP(alias)
         } else {
@@ -258,6 +265,18 @@ export default function App() {
     //     }
     //     return null;
     // }
+}
+
+function ChangeDocTitle(alias) {
+    console.log('ChangeDocTitle', alias);
+    if (alias && fullCollection.length>0) {
+        const item = fullCollection.find( (item) => 
+            item.alias === alias
+        )
+        // console.log('aaaaaaaaaaaaaaa', a);
+        // console.log(a.title);
+        document.title = `${item.title} - Self Test`;
+    }
 }
 
 function *getID() {

@@ -65,7 +65,7 @@ export default function Header({ openAliasEvent, fullCollection, openAlias }) {
 
     function ShowHideModalFullLit() {
         console.log('ShowHideModalFullLit')
-        console.log('isFirstRun', isFirstRun)
+        // console.log('isFirstRun', isFirstRun)
         if (isFirstRun) {
             setIsFirstRun(false)
         } else {
@@ -74,13 +74,14 @@ export default function Header({ openAliasEvent, fullCollection, openAlias }) {
     }
 
     function ModalFullList(props) {
-        let visibility
-        if (props.visibility) visibility = 'block'
-        else visibility = 'none'
+        // let visibility
+        // if (props.visibility) visibility = 'block'
+        // else visibility = 'none'
 
         return (
-            <div className='modal-list' style={{ display: visibility }}>
-                <button className='modal-list__button' onClick={ShowHideModalFullLit}>
+            props.visibility && <>
+            <div className='modal-list'>
+                <button className='modal-list__button close' onClick={ShowHideModalFullLit}>
                     &times;
                 </button>
                 <div className='modal-list__body'>
@@ -100,6 +101,8 @@ export default function Header({ openAliasEvent, fullCollection, openAlias }) {
                     })}
                 </div>
             </div>
+            <div className='modal-list__overlay' onClick={ShowHideModalFullLit}></div>
+            </>
         )
     }
 }

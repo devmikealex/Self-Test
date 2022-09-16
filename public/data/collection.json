@@ -15,6 +15,11 @@
     "title": "ECMAScript"
   },
   {
+    "alias": "ES6",
+    "search": "ecmascript 2015es es6 ecma javascript",
+    "title": "ES6"
+  },
+  {
     "alias": "HTML",
     "search": "html hypertext markup languageразметка гипертекст",
     "title": "HTML"
@@ -58,5 +63,10 @@
     "alias": "W3C",
     "search": "world wide consortiumw3c консорциум всемирной паутины www",
     "title": "W3C"
+  },
+  {
+    "alias": "XML",
+    "search": "extensible markup languagexml разметка расширяемый язык разметки",
+    "title": "XML"
   }
 ]
