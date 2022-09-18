@@ -270,12 +270,19 @@ export default function App() {
 function ChangeDocTitle(alias) {
     console.log('ChangeDocTitle', alias);
     if (alias && fullCollection.length>0) {
-        const item = fullCollection.find( (item) => 
+        let item = fullCollection.find((item) => 
             item.alias === alias
         )
-        // console.log('aaaaaaaaaaaaaaa', a);
-        // console.log(a.title);
+        // let title
+        // if (item) {
+        //     title = item.title
+        // } else {
+        //     title = 'Error'
+        // }
+        // document.title = `${title} - Self Test`;
+        item ??= {title: 'Error'}
         document.title = `${item.title} - Self Test`;
+
     }
 }
 

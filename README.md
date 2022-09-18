@@ -1,8 +1,12 @@
-How to add keyboard shortcuts to your React app - Devtrium
+﻿How to add keyboard shortcuts to your React app - Devtrium
 https://devtrium.com/posts/how-keyboard-shortcut
 
-���������� ��������� ����� ����� - �� ���
+Стилизация текстовых полей формы - ИТ Шеф
 https://itchief.ru/html-and-css/styling-text-input
+
+Операторы логического присваивания &&=, ||= и ??=
+https://webdevblog.ru/operatory-logicheskogo-prisvaivaniya/
+
 
 \node_modules\react-scripts\config\webpackDevServer.config.js
     historyApiFallback: false,

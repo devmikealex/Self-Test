@@ -62,13 +62,17 @@ htmlFilesList.forEach((file) => {
     search = search.trim()
     const array = search.split(' ')
     const unique = [...new Set(array)];
-    const lenFilter = unique.filter(item => item.length > 3)
-    search = lenFilter.join(' ')
-
+    let lenFilter = unique.filter(item => item.length > 3)
+    
     searchByHand = searchByHand.toLowerCase()
     searchByHand = searchByHand.replace(/\s+/g, ' ')
-    searchByHand = searchByHand.trim()
+    searchByHand = searchByHand.trimEnd()
+    
+    lenFilter = lenFilter.filter((item) => {
+        return !searchByHand.includes(item)
+    })
 
+    search = lenFilter.join(' ')
     search = `${search}${searchByHand}`
     
     data.push({

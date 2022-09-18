@@ -1,28 +1,53 @@
 [
   {
     "alias": "AJAX",
-    "search": "ajax asynchronous javascriptасинхронный xml",
+    "search": "ajax asynchronous javascript асинхронный xml",
     "title": "AJAX"
   },
   {
+    "alias": "API",
+    "search": "application programming interfaces api интерфейс прикладного программирования",
+    "title": "API"
+  },
+  {
+    "alias": "CodeBlock",
+    "search": "блоки кода codeblock",
+    "title": "Блоки кода"
+  },
+  {
     "alias": "CSS",
-    "search": "cascading style sheetscss каскадные таблицы стилей",
+    "search": "cascading style sheets css каскадные таблицы стилей",
     "title": "CSS"
   },
   {
+    "alias": "CSSselectors",
+    "search": "селекторы cssselectors css selectors",
+    "title": "CSS селекторы"
+  },
+  {
     "alias": "ECMA",
-    "search": "ecmascript ecmaes ecma javascript",
+    "search": "ecmascript es ecma javascript",
     "title": "ECMAScript"
   },
   {
     "alias": "ES6",
-    "search": "ecmascript 2015es es6 ecma javascript",
+    "search": "ecmascript 2015 es es6 ecma javascript",
     "title": "ES6"
   },
   {
     "alias": "HTML",
-    "search": "html hypertext markup languageразметка гипертекст",
+    "search": "html hypertext markup language разметка гипертекст",
     "title": "HTML"
+  },
+  {
+    "alias": "HTTP",
+    "search": "http hypertext transfer protocol протокол передачи гипертекста",
+    "title": "HTTP"
+  },
+  {
+    "alias": "HTTPS",
+    "search": "https hypertext transfer protocol secure протокол передачи гипертекста http",
+    "title": "HTTPS"
   },
   {
     "alias": "JSON",
@@ -30,43 +55,68 @@
     "title": "JSON"
   },
   {
+    "alias": "literal",
+    "search": "литералы literal переменные константы javascript",
+    "title": "Литералы"
+  },
+  {
+    "alias": "OOP",
+    "search": "объектноориентированное программирование ооп",
+    "title": "ООП"
+  },
+  {
     "alias": "pseudoClass",
-    "search": "псевдоклассы pseudoclass pseudoclassescss pseudoclasses псевдокласс псевдо класс hover",
+    "search": "псевдоклассы css pseudoclasses псевдокласс псевдо класс hover",
     "title": "Псевдоклассы в CSS"
   },
   {
     "alias": "pseudoElem",
-    "search": "псевдоэлементы pseudoelem pseudoelementscss pseudoelements псевдоэлемент псевдо элемент before after first",
+    "search": "псевдоэлементы css pseudoelements псевдоэлемент псевдо элемент before after first",
     "title": "Псевдоэлементы в CSS"
   },
   {
+    "alias": "RESTAPI",
+    "search": "rest restful restapi representational state transfer application programming interface api передачей состояния представления программным интерфейсом приложения",
+    "title": "REST API / RESTful"
+  },
+  {
     "alias": "solve-loAND",
-    "search": "логический оператор solveloand%%",
+    "search": "логический оператор solveloand работает решение задачи && и",
     "title": "Логический оператор && - И"
   },
   {
     "alias": "solve-loOR",
-    "search": "логический оператор solveloor%%",
+    "search": "логический оператор solveloor работает решение задачи || или",
     "title": "Логический оператор || ИЛИ"
   },
   {
     "alias": "solve-thisfunc",
-    "search": "this внутри объекта функции solvethisfunc%%",
+    "search": "this внутри объекта функции solvethisfunc ссылается стрелочной обычной решение задачи стрелочная функция",
     "title": "this внутри объекта и функции"
   },
   {
     "alias": "solve-trycatchfinally",
-    "search": "выполнение catch finally solvetrycatchfinally вернет функция несколькими return решение задачиtry",
+    "search": "выполнение catch finally solvetrycatchfinally вернет функция несколькими return решение задачи try",
     "title": "Выполнение try - catch - finally"
   },
   {
+    "alias": "test",
+    "search": "test",
+    "title": "TEST"
+  },
+  {
     "alias": "W3C",
-    "search": "world wide consortiumw3c консорциум всемирной паутины www",
+    "search": "world wide consortium w3c консорциум всемирной паутины www",
     "title": "W3C"
   },
   {
+    "alias": "webAPI",
+    "search": "service web api webapi application programming interface server browser",
+    "title": "Web API / Web Service API"
+  },
+  {
     "alias": "XML",
-    "search": "extensible markup languagexml разметка расширяемый язык разметки",
+    "search": "extensible markup language xml разметка расширяемый язык разметки",
     "title": "XML"
   }
 ]
