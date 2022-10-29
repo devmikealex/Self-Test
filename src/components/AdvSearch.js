@@ -37,6 +37,10 @@ export default function AdvSearch({ fullCollection, openAlias }) {
     }
 function onKeyDown(e) {
     e.stopPropagation()
+    // console.log(e.target)
+    if (e.target.tagName === 'INPUT' && e.key === 'Escape') {
+        e.target.value = ''
+    }
 }
     return (
         <div className='search-container'>

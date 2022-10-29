@@ -4,7 +4,7 @@
 }
 .yt-preview-img {
     margin-top: 8px;
-    border: 1px rgb(11, 94, 149) solid;
+    border: 1px var(--color-dark) solid;
     /* width: 100%; */
     /* height: auto; */
     display: block;

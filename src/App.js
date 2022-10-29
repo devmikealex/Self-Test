@@ -30,6 +30,9 @@ export default function App() {
     const handleKeyPress = useCallback((event) => {
         // console.log(`Key pressed: ${event.key}`);
         // console.log("---", openedCollection);
+        // if (event.key === 'Escape') {
+        //     console.log('ESC--------');
+        // }
         if (event.key === ' ') {
             event.preventDefault();
             if(!event.repeat) {

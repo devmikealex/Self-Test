@@ -10,6 +10,26 @@
     "title": "API"
   },
   {
+    "alias": "Arg-Param-func",
+    "search": "аргументы параметры функции argparamfunc функция arguments значения переменная",
+    "title": "Аргументы и параметры функции"
+  },
+  {
+    "alias": "Arrow-func",
+    "search": "стрелочные функции arrowfunc arrow function expressions функция this javascript",
+    "title": "Стрелочные функции"
+  },
+  {
+    "alias": "CICD",
+    "search": "cicd continuous integration delivery deployment ci cd непрерывная интеграция непрерывная доставка непрерывное развертывание разработка devops",
+    "title": "CI/CD"
+  },
+  {
+    "alias": "closure",
+    "search": "замыкания javascript closure closures функции функция лексическое окружение переменные переменная",
+    "title": "Замыкания в JavaScript"
+  },
+  {
     "alias": "CodeBlock",
     "search": "блоки кода codeblock",
     "title": "Блоки кода"
@@ -23,6 +43,11 @@
     "alias": "CSSselectors",
     "search": "селекторы cssselectors css selectors",
     "title": "CSS селекторы"
+  },
+  {
+    "alias": "DOM",
+    "search": "document object model dom",
+    "title": "DOM"
   },
   {
     "alias": "ECMA",
@@ -50,9 +75,19 @@
     "title": "HTTPS"
   },
   {
+    "alias": "isNaN",
+    "search": "isnan функция функции number typeof проверка",
+    "title": "isNaN"
+  },
+  {
     "alias": "JSON",
     "search": "json javascript object notation",
     "title": "JSON"
+  },
+  {
+    "alias": "JSX",
+    "search": "syntax extension jsx расширение синтаксиса javascript",
+    "title": "JSX"
   },
   {
     "alias": "literal",
@@ -61,8 +96,13 @@
   },
   {
     "alias": "OOP",
-    "search": "объектноориентированное программирование ооп",
+    "search": "объектноориентированное программирование ооп парадигма классы объекты класс объект",
     "title": "ООП"
+  },
+  {
+    "alias": "polyfill",
+    "search": "полифил polyfill код функция браузер",
+    "title": "Полифил"
   },
   {
     "alias": "pseudoClass",

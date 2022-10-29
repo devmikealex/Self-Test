@@ -1,0 +1,30 @@
+isNaN
+функция функции Number typeof проверка
+
+<p>
+    Функция <code>isNaN()</code> определяет является ли литерал илипеременная
+    нечисловым значением (<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN"><code>NaN</code></a>) или нет. При работе с функцией необходимо проявлять осторожность так как
+    она<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN#description">имеет свои особенности</a>. В качестве альтернативы можно использовать метод<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN"><code>Number.isNaN()</code></a>из ECMAScript 6, или дополнительно проверять литерал или переменную
+    нанечисловое значение при помощи<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></code>.
+</p>
+<p>
+    Проверки <code>NaN == NaN</code> и <code>NaN === NaN</code>
+    в качестве значения вернут <code>false</code>. Следовательно, для
+    проверки нужна функция <code>isNaN</code>.
+</p>
+<p>
+    <code>isNaN</code> приводит входящий аргумент к числу - если приведение
+    успешное, возвращает <b>false</b>, если нет - возвращает <b>true</b>.
+</p>
+<code>Number([])=== 0</code>
+<h4>Код для проверки:</h4>
+<pre>console.log(isNaN());// true
+console.log(isNaN(undefined)); // true
+console.log(isNaN({})); // true
+console.log(isNaN([])); // false</pre>
+
+%%
+isNaN - JavaScript | MDN
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+Решение – Telegraph
+https://telegra.ph/Reshenie-09-11-8

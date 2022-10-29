@@ -21,7 +21,7 @@
     padding: 6px;
 }
 .modal-list__item:hover {
-    background-color:rgb(236, 249, 255);
+    background-color: var(--color-light);
 }
 
 .modal-list__number{
@@ -43,7 +43,7 @@
     padding: 0px 5px 2px 5px;
     border-radius: var(--border-radius);
     line-height: 22px;
-    color:rgb(179, 181, 183)
+    color: var(--color-dark);
 }
 .modal-list__button:hover {
     /* background: red; */
