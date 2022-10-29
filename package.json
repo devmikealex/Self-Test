@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serv": "serve build"
+    "serv": "serve build",
+    "deploy": "push-dir --dir=build --branch=gh-pages"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "push-dir": "^0.4.1"
   }
 }
