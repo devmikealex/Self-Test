@@ -1,0 +1,14 @@
+﻿Стрелочные функции
+функция this JavaScript
+%%
+Arrow function expressions
+
+<p>
+    Каждая функция в JavaScript определяет свой собственный контекст
+    <b>this</b>, но внутри стрелочных функций значение <b>this </b>то же самое,
+    что и снаружи. Стрелочные функции <mark>не имеют своего this</mark>.
+</p>
+<pre>const sum = (a, b) => {
+  const result = a + b;
+  return result;
+};</pre>

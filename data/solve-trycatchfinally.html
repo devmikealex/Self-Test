@@ -1,0 +1,31 @@
+﻿Выполнение try - catch - finally
+try
+%%
+Что вернет функция с несколькими return - Решение задачи
+
+<pre>const foo = () =&gt; {
+    try {
+        throw new Error("error");
+        return 24;
+    } catch (error) {
+        return error;
+    } finally {
+        return 42;
+    }
+};
+
+console.log(foo());</pre>
+
+<h4>Объяснение:</h4>
+<p>
+    Независимо от того, выброшено ли исключение <code>throw</code>, или в блоках <code>try</code>-<code>catch</code>
+    что-то возвращается, блок <code>finally</code> выполнится
+    <mark>в любом случае</mark>. И если в этом блоке что-то возвращается, то
+    это и <mark>будет результатом выполнения всей функции</mark>.
+</p>
+<h4>Ответ:</h4>
+<p><code>42</code></p>
+
+%%
+Решение – Telegraph
+https://telegra.ph/Reshenie-08-13-8

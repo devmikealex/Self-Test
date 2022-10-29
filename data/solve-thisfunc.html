@@ -1,0 +1,34 @@
+﻿this внутри объекта и функции
+стрелочная функция
+%%
+На что ссылается this внутри стрелочной и обычной функции - Решение задачи
+
+<pre>const shape = {
+  radius: 10,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () =&gt; 2 * Math.PI * this.radius
+};
+
+shape.diameter();
+shape.perimeter();</pre>
+
+<h4>Объяснение:</h4>
+<p>
+    Все дело в том, что <code>diameter</code> это обычная функция, в то
+    время как <code>perimeter</code> это стрелочная функция.
+    У стрелочных функций значение <code>this</code> указывает на
+    окружающую область видимости, в отличие от обычных функций! Это значит, что
+    при вызове <code>perimeter</code> значение <code>this</code> у
+    этой функции указывает не на объект <code>shape</code>, а на внешнюю
+    область видимости (например, window).
+    У этого объекта нет ключа <code>radius</code>, поэтому
+    возвращается <code>undefined</code>.
+</p>
+<h4>Ответ:</h4>
+<p><code>20 и NaN</code></p>
+
+%%
+Решение – Telegraph
+https://telegra.ph/Reshenie-08-27-8

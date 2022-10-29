@@ -1,0 +1,162 @@
+[
+  {
+    "alias": "AJAX",
+    "search": "ajax asynchronous javascript асинхронный xml",
+    "title": "AJAX"
+  },
+  {
+    "alias": "API",
+    "search": "application programming interfaces api интерфейс прикладного программирования",
+    "title": "API"
+  },
+  {
+    "alias": "Arg-Param-func",
+    "search": "аргументы параметры функции argparamfunc функция arguments значения переменная",
+    "title": "Аргументы и параметры функции"
+  },
+  {
+    "alias": "Arrow-func",
+    "search": "стрелочные функции arrowfunc arrow function expressions функция this javascript",
+    "title": "Стрелочные функции"
+  },
+  {
+    "alias": "CICD",
+    "search": "cicd continuous integration delivery deployment ci cd непрерывная интеграция непрерывная доставка непрерывное развертывание разработка devops",
+    "title": "CI/CD"
+  },
+  {
+    "alias": "closure",
+    "search": "замыкания javascript closure closures функции функция лексическое окружение переменные переменная",
+    "title": "Замыкания в JavaScript"
+  },
+  {
+    "alias": "CodeBlock",
+    "search": "блоки кода codeblock",
+    "title": "Блоки кода"
+  },
+  {
+    "alias": "CSS",
+    "search": "cascading style sheets css каскадные таблицы стилей",
+    "title": "CSS"
+  },
+  {
+    "alias": "CSSselectors",
+    "search": "селекторы cssselectors css selectors",
+    "title": "CSS селекторы"
+  },
+  {
+    "alias": "DOM",
+    "search": "document object model dom",
+    "title": "DOM"
+  },
+  {
+    "alias": "ECMA",
+    "search": "ecmascript es ecma javascript",
+    "title": "ECMAScript"
+  },
+  {
+    "alias": "ES6",
+    "search": "ecmascript 2015 es es6 ecma javascript",
+    "title": "ES6"
+  },
+  {
+    "alias": "HTML",
+    "search": "html hypertext markup language разметка гипертекст",
+    "title": "HTML"
+  },
+  {
+    "alias": "HTTP",
+    "search": "http hypertext transfer protocol протокол передачи гипертекста",
+    "title": "HTTP"
+  },
+  {
+    "alias": "HTTPS",
+    "search": "https hypertext transfer protocol secure протокол передачи гипертекста http",
+    "title": "HTTPS"
+  },
+  {
+    "alias": "isNaN",
+    "search": "isnan функция функции number typeof проверка",
+    "title": "isNaN"
+  },
+  {
+    "alias": "JSON",
+    "search": "json javascript object notation",
+    "title": "JSON"
+  },
+  {
+    "alias": "JSX",
+    "search": "syntax extension jsx расширение синтаксиса javascript",
+    "title": "JSX"
+  },
+  {
+    "alias": "literal",
+    "search": "литералы literal переменные константы javascript",
+    "title": "Литералы"
+  },
+  {
+    "alias": "OOP",
+    "search": "объектноориентированное программирование ооп парадигма классы объекты класс объект",
+    "title": "ООП"
+  },
+  {
+    "alias": "polyfill",
+    "search": "полифил polyfill код функция браузер",
+    "title": "Полифил"
+  },
+  {
+    "alias": "pseudoClass",
+    "search": "псевдоклассы css pseudoclasses псевдокласс псевдо класс hover",
+    "title": "Псевдоклассы в CSS"
+  },
+  {
+    "alias": "pseudoElem",
+    "search": "псевдоэлементы css pseudoelements псевдоэлемент псевдо элемент before after first",
+    "title": "Псевдоэлементы в CSS"
+  },
+  {
+    "alias": "RESTAPI",
+    "search": "rest restful restapi representational state transfer application programming interface api передачей состояния представления программным интерфейсом приложения",
+    "title": "REST API / RESTful"
+  },
+  {
+    "alias": "solve-loAND",
+    "search": "логический оператор solveloand работает решение задачи && и",
+    "title": "Логический оператор && - И"
+  },
+  {
+    "alias": "solve-loOR",
+    "search": "логический оператор solveloor работает решение задачи || или",
+    "title": "Логический оператор || ИЛИ"
+  },
+  {
+    "alias": "solve-thisfunc",
+    "search": "this внутри объекта функции solvethisfunc ссылается стрелочной обычной решение задачи стрелочная функция",
+    "title": "this внутри объекта и функции"
+  },
+  {
+    "alias": "solve-trycatchfinally",
+    "search": "выполнение catch finally solvetrycatchfinally вернет функция несколькими return решение задачи try",
+    "title": "Выполнение try - catch - finally"
+  },
+  {
+    "alias": "test",
+    "search": "test",
+    "title": "TEST"
+  },
+  {
+    "alias": "W3C",
+    "search": "world wide consortium w3c консорциум всемирной паутины www",
+    "title": "W3C"
+  },
+  {
+    "alias": "webAPI",
+    "search": "service web api webapi application programming interface server browser",
+    "title": "Web API / Web Service API"
+  },
+  {
+    "alias": "XML",
+    "search": "extensible markup language xml разметка расширяемый язык разметки",
+    "title": "XML"
+  }
+]
