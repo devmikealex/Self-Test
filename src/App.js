@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import SideCount from "./components/SideCount";
 import "./App.css";
 
-const COLLECTION_URL = "/data/collection.json";
+const COLLECTION_URL = "./data/collection.json";
 const RANDOM_BUTTON_DEFAULT = "Случайная карточка";
 
 let fullCollection = [];

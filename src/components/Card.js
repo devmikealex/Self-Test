@@ -12,7 +12,7 @@ export default function Card(props) {
         if (titleCode.includes('_notfound_')) {
             titleCode = '_notfound'
         }       
-        fetch("/data/" + titleCode + ".html")
+        fetch("./data/" + titleCode + ".html")
             .then((response) => response.text())
             .then((text) => {
                 console.log('Card Fetch', props.titleCode);

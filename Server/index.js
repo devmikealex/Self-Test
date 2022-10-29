@@ -21,7 +21,8 @@ app.get("/", (req, res) => {
     res.redirect("index.html")
 })
 
-const pathStatic = path.join(__dirname, "..", "build");
+// const pathStatic = path.join(__dirname, "..", "build");
+const pathStatic = path.join(__dirname, "..");
 console.log("pathStatic", pathStatic)
 app.use(express.static(pathStatic))
 
