@@ -18,7 +18,7 @@ app.use((req,res,next) => {
 
 app.get("/", (req, res) => {
     // res.send("Root folder")
-    res.redirect("index.html")
+    res.redirect("/build/index.html")
 })
 
 // const pathStatic = path.join(__dirname, "..", "build");
